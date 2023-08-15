@@ -1,11 +1,6 @@
-         ___        ______     ____ _                 _  ___  
-        / \ \      / / ___|   / ___| | ___  _   _  __| |/ _ \ 
-       / _ \ \ /\ / /\___ \  | |   | |/ _ \| | | |/ _` | (_) |
-      / ___ \ V  V /  ___) | | |___| | (_) | |_| | (_| |\__, |
-     /_/   \_\_/\_/  |____/   \____|_|\___/ \__,_|\__,_|  /_/ 
- ----------------------------------------------------------------- 
+## AWS Sample: 
+Using Streamlit to consume AWS AI/ML & GenAI services
 
-## AWS Sample: Using Streamlit to consume AWS AI/ML & GenAI services
 This example uses streamlit to showcase a simple and intuitive user-interface. It allows the user to:
 1. Upload single-page PDF files into  genAI-app and store it in user-supplied S3 input-bucket
 2. Covert the PDF into text and store it in user-supplie S3 output-bucket
