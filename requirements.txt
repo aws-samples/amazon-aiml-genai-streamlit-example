@@ -1,0 +1,8 @@
+./dependencies/awscli-1.27.162-py3-none-any.whl
+./dependencies/boto3-1.26.162-py3-none-any.whl
+./dependencies/botocore-1.29.162-py3-none-any.whl
+langchain==0.0.240
+urllib3==1.26.6
+beautifulsoup4
+streamlit
+google
