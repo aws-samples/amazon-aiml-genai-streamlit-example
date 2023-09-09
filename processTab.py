@@ -4,13 +4,14 @@ import pandas as pd
 import streamlit as st
 import constants as const
 import bedrock_util as bu
+import smjs_util as su
 import time
 
 def process(tab):
     if tab.button('Process Refresh'):
         st.session_state.messages = []
         st.experimental_rerun()
-        
+
     llm = bu.get_genAI_llm()
     df = pd.DataFrame({"Files":const.listFiles(const.output_bucket, const.output_dump)})
     option = tab.selectbox("Select File", df, key="processTabBox")
@@ -39,8 +40,9 @@ def process(tab):
         content = textArea
         prompt = "Context: " + content + "\n" + txtInput
         with st.spinner('processing...'):
+            # response = su.generate_response(prompt)
             response = llm(prompt)
-        
+
         response = const.escape_str(response)
         chat = c1.chat_message("assistant")
         chatPlaceholder = chat.empty()
@@ -51,7 +53,7 @@ def process(tab):
             time.sleep(0.05)
             # Add a blinking cursor to simulate typing
             chatPlaceholder.markdown(chatResponse + "▌")
-        
+
         chatPlaceholder.markdown(chatResponse)
         # Add user message to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})

@@ -7,6 +7,7 @@ input_bucket = "your-input-bucket"
 output_bucket = "your-output-bucket"
 output_dump = "dump/"
 bedrock_ep_url = "https://your-bedrock-endpoint-url"
+smjs_endpoint = "jumpstart-dft-hf-text2text-flan-t5-xl"
 region_name = "us-west-2"
 ctx_sz = 4000
 byte_sz = 4500
