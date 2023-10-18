@@ -2,7 +2,7 @@
 ./dependencies/boto3-1.28.21-py3-none-any.whl
 ./dependencies/botocore-1.31.21-py3-none-any.whl
 langchain==0.0.240
-urllib3==1.26.6
+urllib3==1.26.18
 beautifulsoup4
 streamlit
 google
