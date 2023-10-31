@@ -12,7 +12,6 @@ def process(tab):
         st.session_state.messages = []
         st.experimental_rerun()
 
-    llm = bu.get_genAI_llm()
     df = pd.DataFrame({"Files":const.listFiles(const.output_bucket, const.output_dump)})
     option = tab.selectbox("Select File", df, key="processTabBox")
     if not option:
@@ -41,7 +40,7 @@ def process(tab):
         prompt = "Context: " + content + "\n" + txtInput
         with st.spinner('processing...'):
             # response = su.generate_response(prompt)
-            response = llm(prompt)
+            response = bu.call_model_claude(prompt)
 
         response = const.escape_str(response)
         chat = c1.chat_message("assistant")

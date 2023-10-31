@@ -40,10 +40,9 @@ def process(tab):
     formOutput = form.empty()
     if crawlInput and submitted:
         content = const.getTextFromWeb(crawlInput)
-        llm = bu.get_genAI_llm()
         info = const.truncate(content, const.ctx_sz)
         prompt = "Context: " + info + "\n" + "for above context write summary:"
-        summary = llm(prompt)
+        summary = bu.call_model_claude(prompt)
         st.session_state.crawl_content = content
         st.session_state.crawl_summary = summary
     
